@@ -4,6 +4,31 @@ var arr = [];
 var arr2 = [1, 2, 3, 4, 5, 6];
 var arr3 = [];
 
+var kahoot = new XMLHttpRequest();
+
+kahoot.open("POST", "http://127.0.0.1:5000/register-user");
+kahoot.setRequestHeader("Content-Type", "application/json")
+kahoot.send(JSON.stringify({
+    "user_id": 6,
+    "username": "lons",
+    "password": "lons123",
+    "email": "lons@gmail.com"
+}));
+
+// kahoot.onreadystatechange = function () {
+//     if (this.readyState == 4 && this.status == 200) {
+//         var respons = this.response
+//         console.log(respons)
+//         alert(respons.message);
+//         window.location = "/signUp.html";
+//     } else if (this.readyState == 4) {
+//         var respons = this.response
+//         console.log(respons)
+//         alert(respons.message);
+//     }
+// };
+
+
 arr.push("dudung", "dadang", "diding", "dodong");
 
 // // for (var i = 0; i < arr.length; i++) {
