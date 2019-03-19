@@ -32,25 +32,43 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="createquiz.html">Create Quiz</a>
+                        <a class="nav-link" href="quiz-list.html">Create Quiz</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="
+                            nav-item">
                         <a class="nav-link" href="index.html">Logout</a>
                     </li>
                 </ul>
             </div>
         </nav>
     </section>
-    <div>
-        <h2 style="padding-left:13%; padding-top: 20px;" id="category">Quiz List</h2>
-    </div>
-    <div class="container" style="padding-top: 2px; ">
-        <div class="row justify-content-center" id="quiz-name">
-            <!-- card will be appeared here -->
-        </div>
-    </div>
-
-    <div style="height:12.8vh;">
+    <div style="padding-top:50px"></div>
+    <section>
+        <div class="container">
+            <form>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-1">
+                            <label for="inputUserId">User Id</label>
+                            <input type="text" class="form-control" id="quiz-user" placeholder="Id">
+                        </div>
+                        <div class="form-group col-md-11">
+                            <label for="inputQuizCategory">Quiz Category</label>
+                            <input type="text" class="form-control" id="quiz-category" placeholder="Category">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputQuizName">Quiz Name</label>
+                        <input type="text" class="form-control" id="quiz-name" placeholder="Name Of Quiz">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputQuizDescription">Quiz Description</label>
+                    </div>
+                    <input type="text" class="form-control" id="quiz-description" placeholder="Description">
+                    <button type="submit" class="btn btn-primary" onclick="quiz_created()">Create Quiz</button>
+                </form>
+    </section>
+    <div style="height:18.8vh;">
 
     </div>
     <footer>
