@@ -2,12 +2,10 @@
 <html lang="en">
 
 <head>
-
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Create quiz</title>
+    <title>Question list</title>
 
     <link rel="stylesheet" href="css/style.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -35,43 +33,41 @@
                         <a class="nav-link" href="quizlist.html">Quiz List</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="createquestion.html">Add Question</a>
+                        <a class="nav-link" href="createquiz.html">Create More Quiz</a>
                     </li>
-                    <li class="
-                            nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="index.html">Logout</a>
                     </li>
                 </ul>
             </div>
         </nav>
     </section>
-    <div style="padding-top:50px"></div>
+    <!-- <div style="padding-top:50px"></div> -->
     <section>
-        <div class="container" style="padding-left: 15%; padding-right: 15%;">
-            <form>
-                <div class="form-row">
-                    <div class="form-group col-md-2">
-                        <label for="inputUserId">Creator Id</label>
-                        <input type="text" class="form-control" id="quiz-user" placeholder="Id">
+        <div class="container" style="padding-top: 20px;" >
+            <div class="row">
+                <div class="col-sm">
+                    <div class="card border-dark mb-3" style="max-width: 18rem; " >
+                        <div class="card-header bg-dark border-white text-white">Lorem ipsum dolor sit amet.</div> 
+                        <div  class="card-header bg-dark border-white text-white"><span style="padding-left: 0px">Lorem, ipsum dolor.</span></div>
+                        <div class="card-body text-white bg-dark">
+                            <h5 class="card-title">Lorem ipsum dolor sit amet.</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, voluptatem?</p>
+                            <p class="card-text">1</p>
+                        </div>
+                        <div class="card-footer bg-dark border-white text-dark">
+                        <a href="#" class="btn text-white border-white" style="background-color:#3a3a3a;">Play</a>
+                        </div>
                     </div>
-                    <div class="form-group col-md">
-                        <label for="inputQuizCategory">Quiz Category</label>
-                        <input type="text" class="form-control" id="quiz-category" placeholder="Category">
-                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="inputQuizName">Quiz Name</label>
-                    <input type="text" class="form-control" id="quiz-name" placeholder="Name Of Quiz">
+                <div class="col-sm-8" >
+                    <ol class="list-group" style="margin-left:-10%;"  id="quest-list">
+                        <!-- list will be appeared here -->
+                    </ol>
                 </div>
-                <div class="form-group">
-                    <label for="inputQuizDescription">Quiz Description</label>
-                    <input type="text" class="form-control" id="quiz-description" placeholder="Description">
-                </div>
-
-                <button type="submit" class="btn btn-primary" onclick="quiz_created()">Create Quiz</button>
-            </form>
+            </div>
     </section>
-    <div style="height:18.8vh;">
+    <div style="height:200px;">
 
     </div>
     <footer>

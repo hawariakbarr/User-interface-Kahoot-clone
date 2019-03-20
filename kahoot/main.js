@@ -134,12 +134,12 @@ function quiz_created() {
 
         success: function (response) {
             alert(response['message']) //200
-            window.location.href = 'quizlist.html'
+            window.location.href = 'createquestion.html'
 
 
         },
         error: function (error) {
-            alert("bangsaattt") //400
+            alert("error") //400
         },
         complete: function () {
 
@@ -148,6 +148,50 @@ function quiz_created() {
 }
 
 
+function add_question() {
+    //vanila js
+    // var username = document.getElementById('username-form').value
+    // var password = document.getElementById('password-form').value
+
+    //jquery
+    var quizId = $('input#quiz-id').val()
+    var questionId = $('input#question-id').val()
+    var theQuestion = $('input#the-question').val()
+    var opA = $('input#op-a').val()
+    var opB = $('input#op-b').val()
+    var opC = $('input#op-c').val()
+    var opD = $('input#op-d').val()
+    var corAnswer = $('input#cor-answer').val()
+
+    $.ajax({
+        url: 'http://127.0.0.1:5000/create-question',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({
+            quiz_id: quizId,
+            question_id: questionId,
+            the_question: theQuestion,
+            A: opA,
+            B: opB,
+            C: opC,
+            D: opD,
+            correct_answer:corAnswer
+        }),
+
+        success: function (response) {
+            alert(response['message']) //200
+            window.location.href = 'questionlist.html'
+
+
+        },
+        error: function (error) {
+            alert("eror") //400
+        },
+        complete: function () {
+
+        }
+    })
+}
 
 $.ajax({
     url: "http://127.0.0.1:5000/get-all-quiz",
@@ -157,26 +201,23 @@ $.ajax({
     // data: []
     success: function (result) {
         for (var i = 0; i < result.length; i++) {
+            console.log(result[i]);
             var cards = `            
-                
-            
-
             <div class="card border-dark mb-3" style="max-width: 18rem; margin:20px" >
                 <div class="card-header bg-dark border-white text-white">Category: ${result[i].quiz_category}</div> 
                 <div  class="card-header bg-dark border-white text-white"><span style="padding-left: 0px">Creator: ${result[i].creator_quiz}</span></div>
                 <div class="card-body text-white bg-dark">
                     <h5 class="card-title">${result[i].quiz_name}</h5>
                     <p class="card-text">${result[i].quiz_description}</p>
-                    <p class="card-text">Questions: ${result[i].question_list.length}</p>
+                    
                 </div>
-                <div class="card-footer bg-dark border-white text-dark">
-                <a href="#" class="btn text-white border-white" style="background-color:#3a3a3a;">Play</a>
+                <div class="card-footer bg-dark border-white text-white">
+                <p class="card-text">Questions: ${result[i].question_list.length}</p>
                 </div>
             </div>
-            
             `;
             $('#quiz-name').append(cards)
-            console.log(result[i]);
+            
         }
     },
     error: function (error) {
@@ -186,3 +227,53 @@ $.ajax({
 
     }
 })
+
+$.ajax({
+    url: "http://127.0.0.1:5000/get-all-question",
+    method: "GET",
+    // authorization: 'application/json',
+    // ini untuk sesuatu yg membutuhkan data dari depan, biasanya post, tapi get juga kadang perlu. bisa 
+    // data: []
+    success: function (result) {
+        for (var i = 0; i < result.length; i++) {
+            var questionList = `            
+            <li class="list-group-item">${result[i].question}</li>
+            `;
+            $('#quest-list').append(questionList)
+            // console.log(result[i]);
+        }
+    },
+    error: function (error) {
+        //error handling
+    },
+    complete: function () {
+
+    }
+})
+
+// function questionById()
+// var questionId = $('input#get-question-id').val()
+
+
+// $.ajax({
+//     url: "http://127.0.0.1:5000/get-question" +"/"+questionId,
+//     method: "GET",
+//     // authorization: 'application/json',
+//     // ini untuk sesuatu yg membutuhkan data dari depan, biasanya post, tapi get juga kadang perlu. bisa 
+//     // data: []
+//     success: function (result) {
+//         for (var i = 0; i < result.length; i++) {
+//             var questionList = `            
+//             <li class="list-group-item">${result[i].question}</li>
+//             `;
+//             $('#quest-list').append(questionList)
+//             // console.log(result[i]);
+//         }
+//     },
+//     error: function (error) {
+//         //error handling
+//     },
+//     complete: function () {
+
+//     }
+// })

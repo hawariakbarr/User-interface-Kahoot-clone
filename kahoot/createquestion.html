@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Create quiz</title>
+    <title>Create question</title>
 
     <link rel="stylesheet" href="css/style.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -35,10 +35,10 @@
                         <a class="nav-link" href="quizlist.html">Quiz List</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="createquestion.html">Add Question</a>
+                        <a href="" class="btn btn-default btn-rounded" style="color:rgba(0,0,0,.5);" data-toggle="modal" data-target="#modalLoginForm">Question list</a>
                     </li>
-                    <li class="
-                            nav-item">
+                    
+                    <li class="nav-item">
                         <a class="nav-link" href="index.html">Logout</a>
                     </li>
                 </ul>
@@ -50,30 +50,73 @@
         <div class="container" style="padding-left: 15%; padding-right: 15%;">
             <form>
                 <div class="form-row">
-                    <div class="form-group col-md-2">
-                        <label for="inputUserId">Creator Id</label>
-                        <input type="text" class="form-control" id="quiz-user" placeholder="Id">
+                    <div class="form-group col-md-1">
+                        <label for="inputUserId">Qz id</label>
+                        <input type="text" class="form-control" id="quiz-id" placeholder="Id">
+                    </div>
+                    <div class="form-group col-md-1">
+                        <label for="inputUserId">Qs Id</label>
+                        <input type="text" class="form-control" id="question-id" placeholder="Id">
                     </div>
                     <div class="form-group col-md">
-                        <label for="inputQuizCategory">Quiz Category</label>
-                        <input type="text" class="form-control" id="quiz-category" placeholder="Category">
+                        <label for="inputQuizCategory">Question</label>
+                        <input type="text" class="form-control" id="the-question" placeholder="Category">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="inputQuizName">Quiz Name</label>
-                    <input type="text" class="form-control" id="quiz-name" placeholder="Name Of Quiz">
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="inputUserId">Option A</label>
+                        <input type="text" class="form-control" id="op-a" placeholder="Id">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputUserId">Option B</label>
+                        <input type="text" class="form-control" id="op-b" placeholder="Id">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputUserId">Option C</label>
+                        <input type="text" class="form-control" id="op-c" placeholder="Id">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputUserId">Option D</label>
+                        <input type="text" class="form-control" id="op-d" placeholder="Id">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="inputQuizDescription">Quiz Description</label>
-                    <input type="text" class="form-control" id="quiz-description" placeholder="Description">
+                <div class="form-row ">
+                    <div class="form-group col-md-3 col-justify">
+                        <label for="inputUserId">Correct Answer</label>
+                        <input type="text" class="form-control" id="cor-answer" placeholder="Id">
+                    </div>
                 </div>
-
-                <button type="submit" class="btn btn-primary" onclick="quiz_created()">Create Quiz</button>
+                <button type="submit" class="btn btn-primary" onclick="add_question()">Add Question</button>
             </form>
     </section>
     <div style="height:18.8vh;">
 
     </div>
+    <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Id</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="md-form">
+          <i class="fas fa-id-card-alt prefix grey-text"></i>
+          <input type="text" id="defaultForm-email" class="form-control validate" id="get-question-id">
+          <label data-error="wrong" data-success="right" for="defaultForm-email">Quiz Id</label>
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-default" onclick="questionById()">GO</button>
+      </div>
+    </div>
+  </div>
+</div>
+
     <footer>
         <section id="lab_social_icon_footer">
             <div class="container">

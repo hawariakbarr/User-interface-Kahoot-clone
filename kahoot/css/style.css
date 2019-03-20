@@ -44,3 +44,11 @@
 #lab_social_icon_footer #social-em:hover {
     color: #f39c12;
 }
+
+.list-group {
+    list-style: decimal inside !important
+}
+
+.list-group-item {
+    display: list-item !important
+}
